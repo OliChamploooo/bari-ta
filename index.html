@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#304336">
+  <meta name="description" content="Oliver Stroyny – Barista auf Jobsuche in Leipzig.">
+  <title>Oliver Stroyny · Barista</title>
+  <style>
+    :root {
+      --green: #304336;
+      --green-2: #415947;
+      --pink: #e8a7be;
+      --pink-light: #f8dce6;
+      --cream: #fffaf5;
+      --sand: #f5ede5;
+      --ink: #26372c;
+      --muted: #59655c;
+      --line: rgba(48, 67, 54, .14);
+      --shadow: 0 14px 38px rgba(48, 67, 54, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--sand); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at 85% 0, #f9dce6 0, transparent 31rem), var(--sand);
+    }
+    .page { width: min(100%, 760px); margin: 0 auto; padding: 14px 14px 34px; }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      border-radius: 28px;
+      background: var(--green);
+      box-shadow: var(--shadow);
+    }
+    .hero:before, .hero:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero:before { width: 250px; height: 250px; top: -134px; right: -102px; border: 2px solid rgba(232,167,190,.55); box-shadow: 0 0 0 18px rgba(232,167,190,.09), 0 0 0 44px rgba(232,167,190,.06); }
+    .hero:after { width: 190px; height: 190px; bottom: -122px; left: -88px; border: 1px solid rgba(255,255,255,.14); }
+    .hero-inner { position: relative; z-index: 1; padding: 25px 21px 24px; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .logo { width: 48px; height: 48px; flex: 0 0 48px; filter: drop-shadow(0 3px 0 rgba(0,0,0,.1)); }
+    .eyebrow { margin: 0; color: var(--pink); font-size: 11px; font-weight: 850; text-transform: uppercase; letter-spacing: .16em; }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; }
+    h1 { margin: 22px 0 5px; color: var(--pink); font-size: clamp(43px, 12vw, 66px); letter-spacing: -.067em; line-height: .86; }
+    .role { margin: 15px 0 0; font-size: 14px; font-weight: 850; text-transform: uppercase; letter-spacing: .15em; }
+    .hero-message { margin: 20px 0 0; max-width: 520px; color: rgba(255,255,255,.95); font-size: 17px; line-height: 1.45; }
+    .hero-message b { color: #fff; }
+    .section { margin-top: 14px; }
+    .card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,250,245,.93); box-shadow: 0 7px 22px rgba(48,67,54,.06); }
+    .section-label { margin: 0 0 5px; color: #92556b; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .14em; }
+    h2 { margin: 0; font-size: 25px; letter-spacing: -.05em; line-height: 1.08; }
+    .lead { margin: 10px 0 0; font-size: 16px; line-height: 1.5; }
+    .skills { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 15px; }
+    .skill { display: grid; grid-template-columns: 45px 1fr; gap: 11px; align-items: start; min-height: 92px; padding: 13px 12px; border: 1px solid var(--line); border-radius: 17px; background: #fff; }
+    .skill-icon { display: grid; place-items: center; width: 44px; height: 44px; color: var(--green); border-radius: 14px; background: var(--pink-light); }
+    .skill:nth-child(2) .skill-icon { background: #e6efe7; }
+    .skill:nth-child(3) .skill-icon { background: #f6e6c9; }
+    .skill:nth-child(4) .skill-icon { background: #e9e3f1; }
+    .skill svg { width: 26px; height: 26px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .skill b { display: block; margin: 1px 0 3px; font-size: 15px; }
+    .skill span { display: block; color: var(--muted); font-size: 13px; line-height: 1.38; }
+    .twocol { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    .why { border: 0; background: linear-gradient(135deg, var(--pink), #f2c7d6); }
+    .why h2, .contact h2 { font-size: 30px; }
+    .why p { margin: 10px 0 0; font-size: 16px; line-height: 1.5; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 15px; }
+    .tag { padding: 7px 10px; border: 1px solid rgba(48,67,54,.18); border-radius: 999px; background: rgba(255,255,255,.58); font-size: 12px; font-weight: 750; }
+    .contact { color: #fff; border: 0; background: var(--green); }
+    .contact .section-label { color: var(--pink); }
+    .contact h2 { color: var(--pink); }
+    .contact p { margin: 8px 0 14px; color: rgba(255,255,255,.88); font-size: 14px; line-height: 1.42; }
+    .contact-list { display: grid; gap: 8px; }
+    .contact-item { display: flex; align-items: center; gap: 10px; padding: 13px; color: #fff; border-radius: 14px; background: rgba(255,255,255,.1); text-decoration: none; font-size: 15px; font-weight: 760; transition: background .15s ease, transform .15s ease; }
+    .contact-item:hover, .contact-item:focus-visible { background: rgba(255,255,255,.18); transform: translateY(-1px); outline: none; }
+    .contact-symbol { width: 26px; color: var(--pink); font-size: 19px; text-align: center; }
+    footer { padding: 17px 8px 0; color: #6c766d; text-align: center; font-size: 11px; }
+    @media (min-width: 570px) {
+      .page { padding-top: 24px; }
+      .hero-inner { padding: 32px 34px 29px; }
+      .skills { grid-template-columns: 1fr 1fr; }
+      .twocol { grid-template-columns: 1.05fr .95fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="brand">
+          <!-- Eigenes, frei nutzbares Latte-Art-Symbol als SVG -->
+          <svg class="logo" viewBox="0 0 64 64" aria-label="Latte-Art-Logo" role="img">
+            <circle cx="30" cy="32" r="27" fill="#d9ae6b" stroke="#e8a7be" stroke-width="5"/>
+            <path d="M57 25h2.5c7.5 0 7.5 15 0 15H57" fill="#e8a7be" stroke="#304336" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="30" cy="32" r="21" fill="none" stroke="#304336" stroke-width="2.5"/>
+            <path d="M30 47c-10-9-10-22 0-28 10 6 10 19 0 28Zm0-23v20M22 29c4 2 6 5 8 9M38 29c-4 2-6 5-8 9M25 23c2 2 4 4 5 7M35 23c-2 2-4 4-5 7" fill="none" stroke="#fffaf5" stroke-width="2.6" stroke-linecap="round"/>
+          </svg>
+          <p class="eyebrow">Bewerbung · Barista</p>
+        </div>
+        <h1>Oliver Stroyny</h1>
+        <p class="role">Barista auf Jobsuche</p>
+        <p class="hero-message">Ich möchte <b>als Barista</b> in einem Café arbeiten, das guten Kaffee, gute Abläufe und eine gute Atmosphäre ernst nimmt.</p>
+      </div>
+    </header>
+
+    <section class="section card">
+      <p class="section-label">Auf einen Blick</p>
+      <h2>Das bringe ich an die Bar</h2>
+      <div class="skills">
+        <article class="skill">
+          <div class="skill-icon"><svg viewBox="0 0 32 32"><path d="M8 20h15v5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5Z"/><path d="M23 22h3a3 3 0 0 1 0 6h-3M8 20V9h15v11M11 5h9v4M12 14h7"/></svg></div>
+          <div><b>Espresso & Extraktion</b><span>Mühle einstellen, Rezepte verstehen und Shots konstant reproduzieren.</span></div>
+        </article>
+        <article class="skill">
+          <div class="skill-icon"><svg viewBox="0 0 32 32"><path d="M7 18h15v6a5 5 0 0 1-5 5h-5a5 5 0 0 1-5-5v-6Z"/><path d="M22 20h3a3 3 0 0 1 0 6h-3M11 14c2-4 8-4 10 0-3 4-7 4-10 0Z"/><path d="M16 9v5"/></svg></div>
+          <div><b>Latte Art & Milchtextur</b><span>Sauberes Arbeiten, fein texturierte Milch und Liebe fürs Detail.</span></div>
+        </article>
+        <article class="skill">
+          <div class="skill-icon"><svg viewBox="0 0 32 32"><path d="M8 8h16l-3 7H11L8 8Z"/><path d="M12 15v12h8V15M16 5v3M10 27h12"/><path d="M14 20h4"/></svg></div>
+          <div><b>Filter, Mokka & Röstung</b><span>Brühmethoden, Röstprofile und Geschmack bewusst einordnen.</span></div>
+        </article>
+        <article class="skill">
+          <div class="skill-icon"><svg viewBox="0 0 32 32"><path d="M16 27c-7-4-10-10-7-15 2-3 5-3 7 0 2-3 5-3 7 0 3 5 0 11-7 15Z"/><path d="M16 9v13M11 15c2 1 4 3 5 5M21 15c-2 1-4 3-5 5"/></svg></div>
+          <div><b>Sensorik & Workflow</b><span>Qualität erkennen, ruhig bleiben und Gästen ein gutes Erlebnis geben.</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section twocol">
+      <article class="card why">
+        <p class="section-label">Warum ich?</p>
+        <h2>Kaffee ist für mich echtes Handwerk.</h2>
+        <p>Ich bringe jahrelange praktische Erfahrung und Neugier mit. Ich arbeite zuverlässig, freundlich und mit Blick für die Details, die aus einer Tasse ein gutes Erlebnis machen.</p>
+        <div class="tags"><span class="tag">qualitätsbewusst</span><span class="tag">teamorientiert</span><span class="tag">ruhiger Workflow</span></div>
+      </article>
+      <article class="card">
+        <p class="section-label">Zusätzlicher Mehrwert</p>
+        <h2>Mehr als nur Kaffee</h2>
+        <p class="lead">Als Medienpädagoge bringe ich außerdem Erfahrung mit Menschen, Vermittlung und kreativer Arbeit mit.</p>
+        <div class="tags"><span class="tag">Social Media</span><span class="tag">Foto & Video</span><span class="tag">Workshops & Kurse</span></div>
+      </article>
+    </section>
+
+    <section class="section card contact">
+      <p class="section-label">Kontakt</p>
+      <h2>Ich freue mich aufs Kennenlernen.</h2>
+      <p>Gerne persönlich, telefonisch oder per Mail — und am besten bei einem wirklich guten Kaffee.</p>
+      <div class="contact-list">
+        <a class="contact-item" href="tel:+4917682052371"><span class="contact-symbol">☎</span>0176 820 52 371</a>
+        <!-- Falls nötig: Die E-Mail-Adresse in href und sichtbarem Text ändern. -->
+        <a class="contact-item" href="mailto:oli@barista.de"><span class="contact-symbol">✉</span>oli@barista.de</a>
+      </div>
+    </section>
+    <footer>Oliver Stroyny · Barista · Leipzig</footer>
+  </main>
+</body>
+</html>
