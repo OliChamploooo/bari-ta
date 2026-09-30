@@ -82,6 +82,96 @@
     .contact-item:hover, .contact-item:focus-visible { background: rgba(255,255,255,.18); transform: translateY(-1px); outline: none; }
     .contact-symbol { width: 26px; color: var(--pink); font-size: 19px; text-align: center; }
     footer { padding: 17px 8px 0; color: #6c766d; text-align: center; font-size: 11px; }
+   .photo-gallery {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 10px;
+}
+
+.photo-card {
+  position: relative;
+  min-height: 265px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--green);
+  box-shadow: var(--shadow);
+}
+
+.photo-card--small {
+  min-height: 265px;
+}
+
+.photo-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .35s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.04);
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(48, 67, 54, .03) 25%,
+    rgba(48, 67, 54, .68) 100%
+  );
+  pointer-events: none;
+}
+
+.photo-caption {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+  color: #fff;
+}
+
+.photo-caption span {
+  display: inline-block;
+  margin-bottom: 5px;
+  color: var(--pink);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.photo-caption strong {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  letter-spacing: -.04em;
+  line-height: 1.04;
+}
+
+.photo-caption p {
+  margin: 6px 0 0;
+  color: rgba(255,255,255,.88);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+@media (max-width: 460px) {
+  .photo-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-card,
+  .photo-card--small {
+    min-height: 280px;
+  }
+}
     @media (min-width: 570px) {
       .page { padding-top: 24px; }
       .hero-inner { padding: 32px 34px 29px; }
@@ -111,6 +201,32 @@
 </p>
       </div>
     </header>
+
+    <section class="section photo-gallery">
+  <figure class="photo-card">
+    <img
+      src="IMG_0540.JPG"
+      alt="Latte Art und Espresso von Oliver Stroyny"
+    >
+    <figcaption class="photo-caption">
+      <span>Barista-Handwerk</span>
+      <strong>Liebe zum Detail.</strong>
+      <p>Espresso, Milchtextur und Latte Art gehören für mich zusammen.</p>
+    </figcaption>
+  </figure>
+
+  <figure class="photo-card photo-card--small">
+    <img
+      src="IMG_4951(2).JPEG"
+      alt="Kaffeezubereitung von Oliver Stroyny"
+    >
+    <figcaption class="photo-caption">
+      <span>Praxis & Geschmack</span>
+      <strong>Kaffee bewusst zubereiten.</strong>
+      <p>Von der Bohne bis zur Tasse.</p>
+    </figcaption>
+  </figure>
+</section>
 
     <section class="section card">
       <p class="section-label">Auf einen Blick</p>
